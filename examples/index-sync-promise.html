@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>SyncPromise</title>
+</head>
+<body>
+	<script src="../src/syncPromise.js"></script>
+	<script>
+		console.log(1);
+		var Sync = new SyncPromise((reject) => {
+			setTimeout(() => {
+				console.log(3);
+				reject('reject');
+			});
+			console.log(2);
+		});
+		console.log(Sync, 'Sync');
+		console.log(4);
+	</script>
+</body>
+</html>
